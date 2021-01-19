@@ -1,4 +1,7 @@
-public class Password {
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Password{
 	public static Scanner scanner = new Scanner(System.in);
 	public static void toCheckEmail() {
 		
@@ -57,7 +60,7 @@ public class Password {
 		String password;
 		System.out.println("Enter password");
 		password = scanner.next();
-		if (Pattern.matches("^(?=.*[A-Z])[\\da-zA-Z]{8,}", password)) {
+		if (Pattern.matches("(^(?=.*[A-Z])(?=.*[0-9])[-_.#@/]{2}([a-z]?).{8,}$", password)) {
 			System.out.println("Valid password.");
 		}
 		else {
